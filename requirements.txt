@@ -1,0 +1,14 @@
+numpy==1.26.2
+pandas==2.2.3
+matplotlib==3.9.0
+pyarrow==20.0.0
+sqlalchemy==2.0.41
+# llama-cpp-python==0.3.11
+langchain==0.3.12
+langchain-community==0.3.12
+langchain-huggingface==0.1.2
+langchain-experimental==0.3.4
+langchain-google-genai==2.0.8
+chromadb==0.5.23
+faker==37.4.2
+# CMAKE_ARGS="-DGGML_METAL=on -DGGML_METAL_EMBED_LIBRARY=on" pip install llama-cpp-python==0.3.9 --force-reinstall --no-cache-dir
