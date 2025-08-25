@@ -1,6 +1,6 @@
 # Text2SQL-Agent: A Natural Language to SQL Agent
 
-A powerful tool that converts natural language questions into SQL queries. This project leverages Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) to understand database schemas with high accuracy and generate executable SQL.
+A powerful tool that converts natural language questions into SQL queries and executes them on a database to return accurate answers. This project leverages Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) to understand database schemas, generate executable SQL, and provide immediate, meaningful insights from the data.
 
 
 ## How It Works
@@ -44,9 +44,9 @@ The workflow is as follows:
 3.  **Set up environment variables**
     - **To use Gemini:**
       You will need a Google API key. How you provide it depends on how you run the agent:
-      - **For the Jupyter Notebook (`run_agent.ipynb`):** The notebook reads the API key from an environment variable named `GOOGLE_API`. Before launching Jupyter, you must set this variable in your terminal:
+      - **For the Jupyter Notebook (`run_agent.ipynb`):** The notebook reads the API key from an environment variable named `GOOGLE_API_KEY`. Before launching Jupyter, you must set this variable in your terminal:
         ```bash
-        export GOOGLE_API="YOUR_GOOGLE_API_KEY"
+        export GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
         ```
       - **For the Command-Line (`agent.py`):** The script expects the API key to be passed as an argument. See the Usage section below.
 
@@ -60,7 +60,7 @@ There are two primary ways to use this agent:
 ### 1. Jupyter Notebook (Recommended)
 The `run_agent.ipynb` notebook provides an interactive environment for testing the agent. It walks through the setup and includes several example queries in both English and Chinese.
 
-1.  Set your `GOOGLE_API` environment variable as described in the Setup section.
+1.  Set your `GOOGLE_API_KEY` environment variable as described in the Setup section.
 2.  Launch Jupyter and open `run_agent.ipynb`.
 3.  Run the cells sequentially to see the agent in action.
 
@@ -68,7 +68,7 @@ The `run_agent.ipynb` notebook provides an interactive environment for testing t
 You can also run the agent directly from the command line using `agent.py`. This method requires passing your Google API key using the `-k` flag.
 
 ```bash
-python agent.py -q "How many transactions were made using LinePay?" -k "YOUR_GOOGLE_API_KEY"
+python agent.py -q "How many transactions were made using LinePay?"
 ```
 
 ## Project Structure

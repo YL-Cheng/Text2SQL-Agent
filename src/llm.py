@@ -7,12 +7,11 @@ from langchain_community.llms import LlamaCpp
 logging.basicConfig(level=logging.INFO, format='%(levelname)s | %(message)s')
 
 
-def init_llm_gemini(api_key: str, model_name: str = "models/gemini-2.0-flash", **kwargs) -> ChatGoogleGenerativeAI:
+def init_llm_gemini(model_name: str = "models/gemini-2.0-flash", **kwargs) -> ChatGoogleGenerativeAI:
     """
     Initialize and return a ChatGoogleGenerativeAI LLM with explicit default handling.
 
     Args:
-        api_key (str): The API key for Google Generative AI.
         model_name (str): The name of the model to use. Defaults to "models/gemini-2.0-flash".
     """
     # Extract parameters with defaults
@@ -22,7 +21,6 @@ def init_llm_gemini(api_key: str, model_name: str = "models/gemini-2.0-flash", *
 
     return ChatGoogleGenerativeAI(
         model=model_name,
-        api_key=api_key,
         temperature=temperature,
         max_tokens=max_tokens,
     )

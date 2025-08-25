@@ -229,7 +229,6 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("-q", "--query", type=str, required=True, help="Query to be executed.")
-    parser.add_argument("-k", "--key",   type=str, required=True, help="API key for Google Generative AI.")
     options = parser.parse_args()
 
     # Initialize SQLite DB
@@ -237,7 +236,7 @@ if __name__ == "__main__":
     db = SQLDatabase(engine, include_tables=["members", "items", "campaigns", "transactions", "transaction_items"])
 
     # Initialize schema retriever and tools
-    llm = init_llm_gemini(api_key=options.key)
+    llm = init_llm_gemini()
     df_schema = create_schema()
     retriever = init_retriever(df_schema)
     
